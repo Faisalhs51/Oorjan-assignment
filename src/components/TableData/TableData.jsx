@@ -10,7 +10,7 @@ const TableData = ({ pageNo }) => {
     const response = await axios(
       "https://f68370a9-1a80-4b78-b83c-8cb61539ecd6.mock.pstmn.io/api/v1/get_market_data/"
     );
-    const content = await response.data.data;
+    const content = await response.data.data.reverse();
     let contentStyled = content.map((curr, index) => {
       let date = new Date(curr.date);
       date = date.toLocaleDateString();
